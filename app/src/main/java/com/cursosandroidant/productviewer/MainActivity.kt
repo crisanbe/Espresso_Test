@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setupButtons()
         setupTextField()
     }
-
+//
     private fun setupProduct() {
         selectedProduct = getProductFromServer()
 
