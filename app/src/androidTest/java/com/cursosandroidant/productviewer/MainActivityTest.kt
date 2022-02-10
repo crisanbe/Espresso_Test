@@ -66,5 +66,18 @@ class MainActivityTest {
         onView(withId(R.id.etNewQuantity))//TODO- le indicamo que al dar click nuestro texField pase a la posicion 2
             .check(matches(withText("10")))//TODO- nos posicionamos en 10
     }
+
+    @Test//TODO- funcion decrementar en campo de texto no puede bajar a 0
+    fun setNewQuantity_rest_noReducirTexField() {
+        onView(withId(R.id.etNewQuantity))//campo texField
+            .check(matches(withText("1")))
+
+        onView(withId(R.id.ibSub))//campo restar
+            .perform(click())//performa para desirle que es un evento onclick
+
+        onView(withId(R.id.etNewQuantity))
+            .check(matches(withText("1")))//TODO-  Sigue estando en la pocicion 1
+
+    }
 }
 
